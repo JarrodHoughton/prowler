@@ -25,7 +25,7 @@ module.exports = {
             passed: "#1FB53F",
             failed: "#A3231F",
           },
-        	lime: "#84CC16",
+        	blue: "#102691",
           white: "#FFFFFF",
           error: "#B91C1C",
         },

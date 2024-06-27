@@ -35,7 +35,7 @@ dashboard = dash.Dash(
 
 # Logo
 prowler_logo = html.Img(
-    src="https://prowler.com/wp-content/uploads/logo-dashboard.png", alt="Prowler Logo"
+    src="./assets/cloudza.png", alt="Prowler Logo"
 )
 
 menu_icons = {
@@ -51,11 +51,11 @@ def generate_nav_links(current_path):
         # Gets the icon URL based on the page name
         icon_url = menu_icons.get(page["name"].lower())
         is_active = (
-            " bg-prowler-stone-950 border-r-4 border-solid border-prowler-lime"
+            " bg-prowler-stone-950 border-r-4 border-solid border-prowler-blue"
             if current_path == page["relative_path"]
             else ""
         )
-        link_class = f"block hover:bg-prowler-stone-950 hover:border-r-4 hover:border-solid hover:border-prowler-lime{is_active}"
+        link_class = f"block hover:bg-prowler-stone-950 hover:border-r-4 hover:border-solid hover:border-prowler-blue{is_active}"
 
         link_content = html.Span(
             [
@@ -88,7 +88,7 @@ def generate_help_menu():
         },
     ]
 
-    link_class = "block hover:bg-prowler-stone-950 hover:border-r-4 hover:border-solid hover:border-prowler-lime"
+    link_class = "block hover:bg-prowler-stone-950 hover:border-r-4 hover:border-solid hover:border-prowler-blue"
 
     menu_items = []
     for link in help_links:
@@ -156,20 +156,6 @@ def update_nav_bar(pathname):
             ),
             html.Nav(
                 [
-                    html.A(
-                        [
-                            html.Span(
-                                [
-                                    html.Img(src="assets/favicon.ico", className="w-5"),
-                                    "Subscribe to prowler SaaS",
-                                ],
-                                className="flex items-center gap-x-3 text-white",
-                            ),
-                        ],
-                        href="https://prowler.com/",
-                        target="_blank",
-                        className="block p-3 uppercase text-xs hover:bg-prowler-stone-950 hover:border-r-4 hover:border-solid hover:border-prowler-lime",
-                    ),
                     html.Ul(generate_help_menu(), className=""),
                 ],
                 className="flex flex-col gap-y-6 mt-auto",
